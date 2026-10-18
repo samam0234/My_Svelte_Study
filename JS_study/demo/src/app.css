@@ -1,0 +1,65 @@
+/* 전역 스타일: 모든 실습 컴포넌트가 공유한다.
+   컴포넌트별 스타일은 각 .svelte 파일의 <style> 안에서 따로 쓴다. */
+:root {
+  --bg: #fafafa;
+  --panel: #ffffff;
+  --text: #222;
+  --muted: #666;
+  --line: #e2e2e2;
+  --accent: #ff3e00; /* Svelte 오렌지 */
+  --accent-soft: #fff1ec;
+  font-family: system-ui, 'Noto Sans KR', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17171a;
+    --panel: #212126;
+    --text: #eee;
+    --muted: #a0a0a8;
+    --line: #3a3a42;
+    --accent-soft: #3a2118;
+  }
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+h1, h2, h3 { margin: 0 0 0.6rem; }
+p { line-height: 1.6; }
+code { background: var(--accent-soft); padding: 0.1em 0.35em; border-radius: 4px; }
+
+button {
+  font: inherit;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+input, select, textarea {
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--text);
+}
+
+/* 실습 카드: 예제 하나를 감싸는 박스 */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+.card > h3 { font-size: 1rem; color: var(--accent); }
+.row { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.muted { color: var(--muted); font-size: 0.9rem; }
