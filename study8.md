@@ -297,6 +297,7 @@ posts.data   // Post[] | undefined   ← listPosts의 반환 타입에서 자동
 
 - **`res.json()`은 런타임에 아무것도 검증하지 않습니다.** `as T`는 "그렇다고 믿겠다"는 선언일 뿐이므로, 외부 데이터가 중요하면 zod 같은 스키마 검증 라이브러리를 씁니다.
 - `catch (e)`의 `e`는 `unknown`이라서 `e instanceof Error`로 확인한 뒤 `message`를 읽습니다.
+- 단, **취소(AbortError) 판별은 `instanceof Error`를 쓰지 않습니다.** `DOMException`은 실행 환경(브라우저·jsdom·Node)에 따라 `Error`를 상속하지 않는 경우가 있어서, 객체의 `name`을 비교하는 `isAbortError(e)` 헬퍼를 만들었습니다. (study10 테스트에서 발견)
 - `Omit<Post, 'id'>`, `Record<string, never>` 같은 유틸리티 타입으로 API 계약을 표현합니다.
 
 ---
