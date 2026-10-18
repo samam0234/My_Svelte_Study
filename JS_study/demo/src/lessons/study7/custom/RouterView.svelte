@@ -5,6 +5,10 @@
   // fallback: 어떤 경로와도 맞지 않을 때 보여 줄 컴포넌트
   let { routes, fallback } = $props()
 
+  // 라우터가 화면에 없는 동안(예: 다른 라우터로 전환했을 때) 주소가 바뀌었을 수 있으므로
+  // 만들어질 때 한 번 주소창과 상태를 맞춘다. (hashchange는 "바뀔 때"만 알려 주기 때문)
+  router.sync()
+
   // 현재 path와 맞는 첫 번째 라우트 (순서가 중요: 구체적인 것을 위에)
   const matched = $derived.by(() => {
     for (const route of routes) {

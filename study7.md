@@ -71,6 +71,7 @@ export const router = new RouterState()   // study6의 "클래스 + 룬" 패턴
 ```svelte
 <script>
   let { routes, fallback } = $props()
+  router.sync()                                      // 만들어질 때 주소창과 한 번 맞춘다 (아래 설명)
 
   const matched = $derived.by(() => {                // 현재 path와 맞는 첫 라우트
     for (const route of routes) {
@@ -89,6 +90,7 @@ export const router = new RouterState()   // study6의 "클래스 + 룬" 패턴
 - `$derived`로 "어떤 컴포넌트를 보일지"를 계산하고, 컴포넌트를 변수(`View`)에 담아 `<View />`로 그립니다. (Svelte 5는 이게 가능)
 - 라우트 **순서가 중요**합니다. 위에서부터 처음 맞는 것이 선택됩니다.
 - 라우트에 맞는 게 없으면 `fallback`(404)을 보여 줍니다.
+- **만들어질 때 `router.sync()`를 한 번 호출**합니다. `hashchange`는 주소가 "바뀔 때"만 알려 주기 때문에, 이 컴포넌트가 화면에 없는 동안(예: 실습의 A↔B 탭 전환 중 B에서 이동) 주소가 바뀌면 다시 돌아왔을 때 **주소창과 다른 화면**이 뜹니다. (study10에서 테스트를 쓰다 발견해 고친 버그)
 
 ### 2-4. 링크 강조 — `NavLink.svelte`
 
