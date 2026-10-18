@@ -5,6 +5,7 @@ import Study2 from './study2/Lesson.svelte'
 import Study3 from './study3/Lesson.svelte'
 import Study4 from './study4/Lesson.svelte'
 import Study5 from './study5/Lesson.svelte'
+import Study6 from './study6/Lesson.svelte'
 
 export interface Lesson {
   id: string
@@ -18,4 +19,5 @@ export const lessons: Lesson[] = [
   { id: 'study3', title: 'study3 · props · 이벤트 · bind', component: Study3 },
   { id: 'study4', title: 'study4 · 조건 렌더링 · 리스트', component: Study4 },
   { id: 'study5', title: 'study5 · 컴포넌트 합성 · snippet', component: Study5 },
+  { id: 'study6', title: 'study6 · 고급1 · 공유 상태', component: Study6 },
 ]
