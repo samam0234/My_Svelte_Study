@@ -6,16 +6,16 @@ study 문서 기반 학습 진행 내용을 커밋할 때 지켜야 할 규칙�
 
 1. `study0.md`, `study1.md`, `study2.md`, ... 번호 순서대로 문서를 확인합니다.
 2. 각 문서 안에서도 위에서 아래(섹션 순서)대로 진행 상황을 파악합니다.
-3. 문서 내용에 대응하는 실습 프로젝트의 코드 변경 사항을 진도와 매칭합니다. study1~9는 `JSX_study/demo`, JSX 응용은 `JSX_study/project`, study10은 `TSX_study/demo`, studyFinal은 `TSX_study/project`입니다.
+3. 문서 내용에 대응하는 실습 프로젝트의 코드 변경 사항을 진도와 매칭합니다. study1~10은 `JS_study/demo`·`TS_study/demo`, studyFinal은 `JS_study/project`·`TS_study/project`입니다.
 
 ## 2. 커밋 단위 (진도 파트별 분리)
 
 - 하나의 커밋 = 하나의 학습 진도 파트.
 - 예시:
   - `study0.md` 추가 (개념 정리, 코드 변경 없음) → 커밋 1개
-  - `study1.md` 진행분 + 대응하는 `JSX_study/demo` 프로젝트 최초 생성 → 커밋 1개
-  - `study2.md` 진행분 + `Member` 엔티티/Repository/Service/Controller, H2 설정 등 → 커밋 1개
-    (내용이 크면 의존성/설정 → 엔티티 → 레포지토리 → 서비스 → 컨트롤러 순으로 세부 커밋으로 더 나눌 수 있음)
+  - `study1.md` 진행분 + `JS_study/demo`·`TS_study/demo` 프로젝트 최초 생성 → 커밋 1개
+  - `study2.md` 진행분 + `src/lessons/study2/` 실습 코드(JS/TS) → 커밋 1개
+    (내용이 크면 JS 실습 → TS 실습 순으로 세부 커밋으로 더 나눌 수 있음)
 - 서로 다른 study 파일의 내용을 한 커밋에 섞지 않습니다.
 
 ## 3. 커밋 메시지 형식
@@ -43,11 +43,10 @@ study 문서 기반 학습 진행 내용을 커밋할 때 지켜야 할 규칙�
 
 ```
 feat: 최초 파일 생성
-docs: study0 개념 정리 문서 추가
-feat: Hello World REST API 프로젝트 생성
-feat: Member 엔티티 및 JPA Repository 추가
-chore: H2 데이터베이스 연동 설정
-feat: Member CRUD 컨트롤러 구현
+docs: study0 Svelte 기초 이론 문서 추가
+feat: study1 Svelte + Vite 프로젝트 생성 및 첫 실습
+feat: study4 조건 렌더링과 리스트 실습 추가
+feat: studyFinal 미니 게시판 프로젝트 구현
 ```
 
 ## 4. 커밋 순서

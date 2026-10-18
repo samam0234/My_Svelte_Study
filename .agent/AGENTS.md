@@ -5,19 +5,26 @@
 
 ## 1. 저장소 개요
 
-- React(Vite) 학습 기록 저장소입니다. 순서는 이론 → JSX 실습 → TSX 실습입니다.
-- `study0.md`, `study1.md`, `study2.md`, ... 순서로 학습 진도가 진행됩니다. (숫자가 클수록 최신 진도)
-- `demo`는 기초 실습, `project`는 응용 실습입니다.
-- `JSX_study/demo/`: study1~study9. JavaScript + JSX(`.jsx`)로 개념을 하나씩 쌓는 기초 실습입니다.
-- `JSX_study/project/`: JSX 응용. 목록, 상세, 검색, 로그인만 있는 가벼운 미니 게시판입니다.
-- `TSX_study/demo/`: study10. 위 JSX 기초 실습을 TypeScript(`.tsx`)로 전환한 결과입니다. JSX 원본은 덮어쓰지 않습니다.
-- `TSX_study/project/`: `studyFinal.md`에 대응하는 TSX 응용 미니 게시판입니다.
+- Svelte 5(Vite) 학습 기록 저장소입니다. 순서는 이론 → 기초 실습 → 고급 기술 → 응용 프로젝트입니다.
+- 루트의 학습 문서는 `study0.md` ~ `study10.md`, `studyFinal.md` 순서로 진행됩니다. (숫자가 클수록 최신 진도)
+  - `study0.md`: Svelte 기초 이론
+  - `study1.md`: 프로젝트 생성 방법 및 명령어, 실습1
+  - `study2.md` ~ `study5.md`: 실습2 ~ 실습5
+  - `study6.md` ~ `study10.md`: 고급 기술 구현 1 ~ 5
+  - `studyFinal.md`: 지금까지 배운 것을 응용한 미니 게시판 프로젝트
+- 실습 코드는 언어별 전용 폴더로 분리합니다. 두 폴더는 서로 독립이라 각자 작업할 수 있습니다.
+  - `JS_study/demo/`: study1~study10. JavaScript로 개념을 하나씩 쌓는 기초·고급 실습입니다.
+  - `JS_study/project/`: `studyFinal.md`에 대응하는 JavaScript 미니 게시판입니다.
+  - `TS_study/demo/`: study1~study10을 TypeScript(`lang="ts"`)로 작성한 실습입니다. JS 원본은 덮어쓰지 않습니다.
+  - `TS_study/project/`: `studyFinal.md`에 대응하는 TypeScript 미니 게시판입니다.
+- `demo`는 `src/lessons/studyN/` 폴더 단위로 진도를 쌓고, `App.svelte`의 목차에서 진도를 골라 실행합니다.
 
 ## 2. 작업 전 확인 사항
 
 - 새 작업을 시작하기 전에 `studyN.md` 파일들을 번호 순서대로 확인하여 지금까지의 학습 진도와 맥락을 파악합니다.
-- 실습 코드가 study 문서 설명과 어긋나지 않는지 확인합니다. study1~9는 `JSX_study/demo`, JSX 응용은 `JSX_study/project`, study10은 `TSX_study/demo`, studyFinal은 `TSX_study/project`입니다.
+- 실습 코드가 study 문서 설명과 어긋나지 않는지 확인합니다. study1~10은 `JS_study/demo`·`TS_study/demo`의 `src/lessons/studyN/`, studyFinal은 `JS_study/project`·`TS_study/project`입니다.
 - 새 studyN.md 문서를 추가/수정할 때는 이전 study 문서와 이어지는 흐름을 유지합니다.
+- 코드는 Svelte 5 문법(runes: `$state`, `$derived`, `$effect`, `$props`)을 기본으로 합니다. 옛 문법(`$:`, `export let`)은 비교 설명용으로만 다룹니다.
 
 ## 3. 커밋 규칙
 
