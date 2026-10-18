@@ -8,6 +8,7 @@ import Study6 from './study6/Lesson.svelte'
 import Study7 from './study7/Lesson.svelte'
 import Study8 from './study8/Lesson.svelte'
 import Study9 from './study9/Lesson.svelte'
+import Study10 from './study10/Lesson.svelte'
 
 export const lessons = [
   { id: 'study1', title: 'study1 · 첫 컴포넌트와 템플릿', component: Study1 },
@@ -19,4 +20,5 @@ export const lessons = [
   { id: 'study7', title: 'study7 · 고급2 · 라우팅', component: Study7 },
   { id: 'study8', title: 'study8 · 고급3 · 폼 + API 연동', component: Study8 },
   { id: 'study9', title: 'study9 · 고급4 · transition · action · 생명주기', component: Study9 },
+  { id: 'study10', title: 'study10 · 고급5 · 테스트 · 빌드 · SvelteKit', component: Study10 },
 ]
