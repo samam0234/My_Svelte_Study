@@ -46,3 +46,19 @@
 - 작업을 마칠 때는 다음 에이전트/세션이 이어받을 수 있도록 변경 내용과 다음 단계 후보를 간단히 남깁니다.
 - 불확실한 결정은 추측하지 말고 study 문서 내용을 근거로 삼습니다.
 - 이 문서나 커밋 가이드에 없는 새로운 컨벤션이 필요해지면, 추측해서 각자 다르게 처리하지 말고 이 문서를 먼저 갱신합니다.
+
+## 7. 현재 진행 현황 (2026-10-19 기준)
+
+- `study0.md` ~ `study10.md`, `studyFinal.md` 작성 완료. 각 진도마다 JS/TS 실습 코드가 대응합니다.
+- 실행 방법: 각 프로젝트 폴더(`JS_study/demo`, `TS_study/demo`, `JS_study/project`, `TS_study/project`)에서 `npm install` → `npm run dev` / `npm test` / `npm run build`. TS 폴더는 `npm run check`(타입 검사)도 있습니다.
+- 검증 상태: demo는 테스트 58개씩, project는 50개씩 통과. TS는 `svelte-check` 오류 0.
+- `demo`의 `src/lessons/index.js|ts`가 진도 목록입니다. 새 진도를 추가할 때는 `src/lessons/studyN/` 폴더와 이 목록 한 줄을 함께 추가합니다.
+- JS와 TS는 **같은 내용을 서로 다른 언어로** 작성합니다. 한쪽을 고치면 다른 쪽에도 반영하고, 대응하는 study 문서의 설명도 확인합니다.
+- 테스트는 사용자 관점(Testing Library)으로 작성하고, 새 테스트는 코드를 일부러 망가뜨려 실패하는지(변이 확인) 확인합니다. (study10 참고)
+
+### 다음 단계 후보
+
+- SvelteKit 프로젝트(`SvelteKit_study/` 등)를 새로 만들어 `studyFinal`의 게시판을 `load()` / form actions 기반으로 이전
+- 게시판 댓글, 내 글만 보기, 페이지 크기 선택 등 `studyFinal.md`의 도전 과제
+- 실제 백엔드(Node/Express 또는 SvelteKit `+server.js`)와 연결
+
